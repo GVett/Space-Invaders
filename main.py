@@ -28,19 +28,20 @@ def main():
   alien_group = pygame.sprite.Group()
   alien_bgroup = pygame.sprite.Group()
   player_group = pygame.sprite.Group()
+  player_bgroup = pygame.sprite.Group()
   
   # Create a player 
-  player1 = Player()
+  player1 = Player(player_bgroup)
   player_group.add(player1)
  
   # Board 
-  board = Board(screen, alien_group, alien_bgroup, player1)
+  board = Board(screen, alien_group, alien_bgroup, player1, player_bgroup)
   board.start_round()
   
   while running:
     # Look at events
     for event in pygame.event.get():
-      if event.type == pygame.QUIT:
+      if event.type == pygame.QUIT:  
         running = False
       elif event.type == pygame.KEYDOWN:
         if event.key == pygame.K_SPACE or event.key == pygame.K_z:
@@ -55,6 +56,8 @@ def main():
     alien_bgroup.draw(screen)
     player_group.update()
     player_group.draw(screen)
+    player_bgroup.update()
+    player_bgroup.draw(screen)
 
     clock.tick(60)
     pygame.display.update()

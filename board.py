@@ -7,13 +7,14 @@ class Board():
   Board object that holds all game players
   """
   # Constructor
-  def __init__(self, screen, alien_group, alien_bgroup, player):
+  def __init__(self, screen, alien_group, alien_bgroup, player, player_bgroup):
     self.__screen = screen
     self.score = 0
     self.round = 1
     self.lives = gs.LIVES
     self.alien_group = alien_group
     self.alien_bgroup = alien_bgroup
+    self.player_bgroup = player_bgroup
     self.player_group = player
 
   def __draw_text(self, text, font, color, x, y):
