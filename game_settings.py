@@ -1,0 +1,31 @@
+# Display dimensions
+SCREEN_WIDTH = 1200
+SCREEN_HEIGHT = 700
+HUD_HEIGHT = 50
+
+# Fonts
+DEFAULT_FONT = None
+
+# Colors
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+
+# Game info
+LIVES = 3
+
+# Alien info
+ALIEN_BASE_SPEED = 1
+ALIEN_SPACING = 64
+ALIEN_DOWN = 10
+
+# Bullet info
+ALIEN_BULLET_VELOCITY = 10
+PLAYER_BULLET_VELOCITY = 10
+
+# Player info
+PLAYER_SPEED = 5
+PLAYER_X = SCREEN_WIDTH // 2
+PLAYER_Y = SCREEN_HEIGHT
