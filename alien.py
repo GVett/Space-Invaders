@@ -5,7 +5,7 @@ import random
 
 class Alien(Sprite):
   """ 
-    Alien class that is the primary enemy in gameplay
+  Alien class that is the primary enemy in gameplay
   """
   def __init__(self, x, y, velocity, bullet_group):
     super().__init__()

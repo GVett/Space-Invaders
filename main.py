@@ -2,6 +2,7 @@ import pygame
 import game_settings as gs
 from board import Board
 from player import Player
+from shield import Shield
 
 
 # Setup the game   
@@ -29,13 +30,16 @@ def main():
   alien_bgroup = pygame.sprite.Group()
   player_group = pygame.sprite.Group()
   player_bgroup = pygame.sprite.Group()
+  shield_group = pygame.sprite.Group()
   
   # Create a player 
   player1 = Player(player_bgroup)
   player_group.add(player1)
+  shield = Shield(gs.PLAYER_X, gs.PLAYER_Y)
+  shield_group.add(shield)
  
   # Board 
-  board = Board(screen, alien_group, alien_bgroup, player1, player_bgroup)
+  board = Board(screen, alien_group, alien_bgroup, player_group, player1, player_bgroup, shield_group)
   board.start_round()
   
   while running:
@@ -58,6 +62,8 @@ def main():
     player_group.draw(screen)
     player_bgroup.update()
     player_bgroup.draw(screen)
+    shield_group.update()
+    shield_group.draw(screen)
 
     clock.tick(60)
     pygame.display.update()
